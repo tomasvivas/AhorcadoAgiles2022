@@ -14,5 +14,16 @@ namespace Ahorcado
         public string LetrasCorrectas { get; set; }
         public int Vidas { get; set; }
         public string PalabraIngresada { get; set; }
+
+        public BaseAhorcado()
+        { }
+        public BaseAhorcado(string nom, string pal, int vid)
+        {
+            Nombre = nom;
+            Palabra = pal;
+            Vidas = vid;
+            PalabraIngresada = "*";
+            for(int i=0; i < (Nombre.Length-1); i++) { PalabraIngresada += "*"; }
+        }
     }
 }

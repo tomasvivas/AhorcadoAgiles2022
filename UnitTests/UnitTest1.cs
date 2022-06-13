@@ -7,15 +7,14 @@ namespace UnitTests
     [TestClass]
     public class Sprint1
     {
+
         [TestMethod]
         public void LetraContenidoEnPalabra()
         {
-            BaseAhorcado juego = new BaseAhorcado
-            {
-                Palabra = "uwu"
-            };
-            Logic logic = new Logic();  //Ahorcado.Logica
+            Logic logic = new Logic();
+            logic.juego = new BaseAhorcado("Test", "uwu", 6);
             string letra = "u";
+
 
             bool resultado = logic.ValidarLetra(letra);
 
@@ -25,11 +24,8 @@ namespace UnitTests
         [TestMethod]
         public void LetraNoContenidoEnPalabra()
         {
-            BaseAhorcado juego = new BaseAhorcado
-            {
-                Palabra = "uwu"
-            };
-            Logic logic = new Logic();  //Ahorcado.Logica
+            Logic logic = new Logic();
+            logic.juego = new BaseAhorcado("Test", "uwu", 6);
             string letra = "f";
 
             bool resultado = logic.ValidarLetra(letra);
@@ -45,14 +41,13 @@ namespace UnitTests
         [TestMethod]
         public void LetraSeAñadeALetrasIncorrectas()
         {
-            BaseAhorcado juego = new BaseAhorcado();
             Logic logic = new Logic();
             string letra = "f";
 
             logic.AgregarLetraIncorrecta(letra);
             bool resultado;
 
-            if (juego.LetrasIncorrectas == "f")
+            if (logic.juego.LetrasIncorrectas == "f")
             {
                 resultado = true;
             }
@@ -65,20 +60,19 @@ namespace UnitTests
         [TestMethod]
         public void LetraSeAñadeALetrasCorrectas()
         {
-            BaseAhorcado juego = new BaseAhorcado();
             Logic logic = new Logic();
             string letra = "u";
 
             logic.AgregarLetraCorrecta(letra);
             bool resultado;
 
-            if (juego.LetrasCorrectas == "f")
+            if (logic.juego.LetrasCorrectas == "f")
             {
                 resultado = true;
             }
             else resultado = false;
 
-            Assert.IsTrue(resultado);
+            Assert.IsFalse(resultado);
         }
     }
 
@@ -88,13 +82,12 @@ namespace UnitTests
         [TestMethod]
         public void RestarUnaVida()
         {
-            BaseAhorcado juego = new BaseAhorcado();
             Logic logic = new Logic();
             bool resultado;
 
-            juego.Vidas=6;
+            logic.juego.Vidas=6;
             logic.RestarVida();
-            if (juego.Vidas == 5)
+            if (logic.juego.Vidas == 5)
             {
                 resultado = true;
             }
@@ -106,15 +99,12 @@ namespace UnitTests
         [TestMethod]
         public void ValidarQueElJuegoContinua()
         {
-            BaseAhorcado juego = new BaseAhorcado();
             Logic logic = new Logic();
             bool resultado1, resultado2, resultado3, resultadoFinal, val;
-            juego.Palabra = "Hola";
+            logic.juego.Palabra = "Hola";
 
-
-
-            juego.PalabraIngresada = "*ol*" ;
-            juego.Vidas = 1;
+            logic.juego.PalabraIngresada = "*ol*" ;
+            logic.juego.Vidas = 1;
             val = logic.ValidarJuego();
             if (val == true)                //Situacion 1: El juego continua (false) (Vidas > 0 y Palabra != PalabraIngresada)
             {
@@ -130,9 +120,8 @@ namespace UnitTests
             }
             else resultado2 = false;
 
-
-            juego.PalabraIngresada = "Hola";
-            juego.Vidas = 1;
+            logic.juego.PalabraIngresada = "Hola";
+            logic.juego.Vidas = 1;
             val = logic.ValidarJuego();
             if (val == true)                //Situacion 3: El juego termina (true) (Vidas > 0 y Palabra == PalabraIngresada)
             {

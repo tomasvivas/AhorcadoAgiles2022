@@ -8,7 +8,9 @@ namespace Ahorcado
 {
     public class Logic
     {
-        readonly BaseAhorcado juego = new BaseAhorcado();
+
+        public BaseAhorcado juego = new BaseAhorcado();
+
         //public static string Palabra = main.GetPalabra();
         /*public bool ValidarLetra2(char l)
         {
@@ -50,6 +52,7 @@ namespace Ahorcado
         {
             return juego.Vidas == 0 || (juego.Palabra == juego.PalabraIngresada);
         }
+
 
         /* public bool PedirLetras()
          {
