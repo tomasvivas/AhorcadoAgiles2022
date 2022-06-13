@@ -149,8 +149,11 @@ namespace UnitTests
 
             Assert.IsTrue(resultado);
         }
+    }
 
-        //[TestMethod]
-        //public void PalabraCompletada() { }
+    [TestClass]
+    public class Sprint4 
+    { 
+        
     }
 }

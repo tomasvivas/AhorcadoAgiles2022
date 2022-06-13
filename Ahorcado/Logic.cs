@@ -11,6 +11,9 @@ namespace Ahorcado
 
         public BaseAhorcado juego = new BaseAhorcado();
 
+        #region
+        //Código viejo
+
         //public static string Palabra = main.GetPalabra();
         /*public bool ValidarLetra2(char l)
         {
@@ -27,6 +30,7 @@ namespace Ahorcado
             }
             return val;
         }*/
+        #endregion //Eliminar en MVP
 
         public bool ValidarLetra(string letra)
         {
@@ -58,6 +62,43 @@ namespace Ahorcado
                 return 1;
         }
 
+        public void ActualizarPalabraIngresada(string letra)
+        { 
+        
+        }
+
+        public bool IngresoLetra(string letra) //se ingresa una letra, se modifican los parametros del juego y se responde si la letra es correcta o incorrecta
+        {
+            //se ingresa una letra
+            bool resultado = false;
+
+            //se comprubeba si existe en la palabra y se añade a la lista correspondiente
+            //se informa si la letra es correcta o no y modificar palabra ingresada <- ActualizarPalabraIngresada()
+            if (ValidarLetra(letra) == true)
+            { 
+                AgregarLetraCorrecta(letra);
+                ActualizarPalabraIngresada(letra);
+                resultado = true;
+            }
+            else
+            {
+                AgregarLetraIncorrecta(letra);
+                RestarVida();
+                resultado = false;
+            }
+
+            return resultado;
+        }
+
+
+
+        //Queda:
+        // -Sumar IngresoLetra() y ValidarJuego()
+        // -informar juego terminado y resultado
+        // -quitar el restarvida() de ingresoletra() ??? <- Añadir al juego final
+
+        #region
+        //Código sin revisar
 
         /* public bool PedirLetras()
          {
@@ -107,5 +148,6 @@ namespace Ahorcado
          {
 
          }*/
+        #endregion //Eliminar en MVP
     }
 }
