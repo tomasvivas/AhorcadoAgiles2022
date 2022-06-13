@@ -153,7 +153,12 @@ namespace UnitTests
 
     [TestClass]
     public class Sprint4 
-    { 
-        
+    {
+        //Tests para:
+        //  - AñadirPalabraIngresada()
+        //  - IngresoLetra()
+
+        //Probable Sprint 5:
+        //  - Informar resultado e IngresoLetra() + ValidarJuego()
     }
 }

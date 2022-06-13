@@ -64,7 +64,7 @@ namespace Ahorcado
 
         public void ActualizarPalabraIngresada(string letra)
         { 
-        
+            //PROGRAMAR
         }
 
         public bool IngresoLetra(string letra) //se ingresa una letra, se modifican los parametros del juego y se responde si la letra es correcta o incorrecta
@@ -73,7 +73,7 @@ namespace Ahorcado
             bool resultado = false;
 
             //se comprubeba si existe en la palabra y se añade a la lista correspondiente
-            //se informa si la letra es correcta o no y modificar palabra ingresada <- ActualizarPalabraIngresada()
+            // AÑADIR: se informa si la letra es correcta o no y modificar palabra ingresada <- ActualizarPalabraIngresada()
             if (ValidarLetra(letra) == true)
             { 
                 AgregarLetraCorrecta(letra);
@@ -89,8 +89,6 @@ namespace Ahorcado
 
             return resultado;
         }
-
-
 
         //Queda:
         // -Sumar IngresoLetra() y ValidarJuego()
