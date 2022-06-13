@@ -7,7 +7,7 @@ namespace UnitTests
     [TestClass]
     public class Sprint1
     {
-
+        public Logic logic = new Logic();
         [TestMethod]
         public void LetraContenidoEnPalabra()
         {
@@ -85,7 +85,7 @@ namespace UnitTests
             Logic logic = new Logic();
             bool resultado;
 
-            logic.juego.Vidas=6;
+            logic.juego.Vidas = 6;
             logic.RestarVida();
             if (logic.juego.Vidas == 5)
             {
@@ -97,43 +97,57 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void ValidarQueElJuegoContinua()
+        public void ValidarQueElJuegoContinua() 
         {
             Logic logic = new Logic();
-            bool resultado1, resultado2, resultado3, resultadoFinal, val;
             logic.juego.Palabra = "Hola";
-
-            logic.juego.PalabraIngresada = "*ol*" ;
+            logic.juego.PalabraIngresada = "*ol*";
             logic.juego.Vidas = 1;
-            val = logic.ValidarJuego();
-            if (val == true)                //Situacion 1: El juego continua (false) (Vidas > 0 y Palabra != PalabraIngresada)
-            {
-                resultado1 = false;
-            }
-            else resultado1 = true;
 
-            logic.RestarVida();
-            val = logic.ValidarJuego();
-            if (val == true)                //Situacion 2: El juego termina (true) (Vidas == 0 y Palabra != PalabraIngresada)
-            {
-                resultado2 = true;
-            }
-            else resultado2 = false;
+            int n = logic.ValidarJuego();
+            bool resultado;
+            if (n == 1)
+                resultado = true;
+            else
+                resultado = false;
 
+            Assert.IsTrue(resultado);
+        }
+
+        [TestMethod]
+        public void ValidarJuegoPerdido()
+        {
+            Logic logic = new Logic();
+            logic.juego.Palabra = "Hola";
+            logic.juego.PalabraIngresada = "*ol*";
+            logic.juego.Vidas = 0;
+
+            int n = logic.ValidarJuego();
+            bool resultado;
+            if (n == 2)
+                resultado = true;
+            else
+                resultado = false;
+
+            Assert.IsTrue(resultado);
+        }
+
+        [TestMethod]
+        public void ValidarJuegoGanado()
+        {
+            Logic logic = new Logic();
+            logic.juego.Palabra = "Hola";
             logic.juego.PalabraIngresada = "Hola";
             logic.juego.Vidas = 1;
-            val = logic.ValidarJuego();
-            if (val == true)                //Situacion 3: El juego termina (true) (Vidas > 0 y Palabra == PalabraIngresada)
-            {
-                resultado3 = true;
-            }
-            else resultado3 = false;
 
-            if (resultado1 == resultado2 == resultado3 == true)
-                resultadoFinal = true;
-            else resultadoFinal = false;
+            int n = logic.ValidarJuego();
+            bool resultado;
+            if (n == 3)
+                resultado = true;
+            else
+                resultado = false;
 
-            Assert.IsTrue(resultadoFinal);
+            Assert.IsTrue(resultado);
         }
 
         //[TestMethod]

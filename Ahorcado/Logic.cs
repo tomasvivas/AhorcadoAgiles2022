@@ -48,9 +48,14 @@ namespace Ahorcado
             juego.Vidas--;
         }
 
-        public bool ValidarJuego()
+        public int ValidarJuego()
         {
-            return juego.Vidas == 0 || (juego.Palabra == juego.PalabraIngresada);
+            if (juego.Vidas <= 0)
+                return 2;
+            if (juego.Palabra == juego.PalabraIngresada)
+                return 3;
+            else
+                return 1;
         }
 
 
