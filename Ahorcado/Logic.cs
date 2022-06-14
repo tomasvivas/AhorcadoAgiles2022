@@ -63,8 +63,37 @@ namespace Ahorcado
         }
 
         public void ActualizarPalabraIngresada(string letra)
-        { 
-            //PROGRAMAR
+        {
+            //string pre, pos;
+            char[] l = letra.ToCharArray();
+            char[] p = juego.PalabraIngresada.ToCharArray();
+
+            for (int i = 0; i <= juego.Palabra.Length-1; i++)
+            {
+                #region
+                /*
+                if (juego.Palabra.Substring(i, 1) == letra)
+                {
+                    if (i == 0 || i == juego.Palabra.Length) { 
+                        if (i==0) //!(i==0 || i== juego.Palabra.Length)
+                        juego.PalabraIngresada = letra + juego.PalabraIngresada.Substring((i+1), (juego.PalabraIngresada.Length - i));
+                    else
+                        juego.PalabraIngresada = juego.PalabraIngresada.Substring(0, (i - 1)) + letra;
+                    }
+                    else
+                        juego.PalabraIngresada = juego.PalabraIngresada.Substring(0, (i - 1)) + letra + juego.PalabraIngresada.Substring((i + 1), (juego.PalabraIngresada.Length - i));
+                    //juego.PalabraIngresada = juego.PalabraIngresada.Substring(0, (i-1)) + letra + juego.PalabraIngresada.Substring((i+1), (juego.PalabraIngresada.Length - i));
+                    pre = juego.PalabraIngresada.Substring(0, (i - 1));
+                    pos = juego.PalabraIngresada.Substring((i + 1), (juego.PalabraIngresada.Length - i));
+                    juego.PalabraIngresada = pre + letra + pos;
+                }*/
+                #endregion
+                if (juego.Palabra[i] == l[0]) 
+                {
+                    p[i] = l[0];
+                }
+            }
+            juego.PalabraIngresada = string.Join("",p);
         }
 
         public bool IngresoLetra(string letra) //se ingresa una letra, se modifican los parametros del juego y se responde si la letra es correcta o incorrecta
@@ -72,7 +101,7 @@ namespace Ahorcado
             //se ingresa una letra
             bool resultado = false;
 
-            //se comprubeba si existe en la palabra y se añade a la lista correspondiente
+            //se comprueba si existe en la palabra y se añade a la lista correspondiente
             // AÑADIR: se informa si la letra es correcta o no y modificar palabra ingresada <- ActualizarPalabraIngresada()
             if (ValidarLetra(letra) == true)
             { 
@@ -93,7 +122,10 @@ namespace Ahorcado
         //Queda:
         // -Sumar IngresoLetra() y ValidarJuego()
         // -informar juego terminado y resultado
-        // -quitar el restarvida() de ingresoletra() ??? <- Añadir al juego final
+        // -quitar el restarvida() de ingresoletra() [?] <- Añadir al juego final
+        // -validar que la letra ya fue ingresada    [??] <- ValidarLetra()
+        // -arriesga palabra                         [??] <- ArriesgaPalabra()
+        // -Contar turnos [??]
 
         #region
         //Código sin revisar

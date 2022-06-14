@@ -154,11 +154,50 @@ namespace UnitTests
     [TestClass]
     public class Sprint4 
     {
+        [TestMethod]
+        public void InicializarPalabraIngresada()
+        {
+            Logic logic = new Logic();
+            logic.juego.Palabra = "Hola";
+
+            logic.juego.SetPalabraIngresada(logic.juego.Palabra);
+
+            Assert.AreEqual("****", logic.juego.PalabraIngresada);
+        }
+
+        [TestMethod]
+        public void ModificarPalabraIngresadaConLetraCorrecta()
+        {
+            Logic logic = new Logic();
+            logic.juego.Palabra = "Hola";
+            logic.juego.PalabraIngresada = "*ol*";
+
+            logic.ActualizarPalabraIngresada("H");
+
+            Assert.AreEqual("Hol*" , logic.juego.PalabraIngresada);
+        }
+
+        [TestMethod]
+        public void NoSeModificaLaPalabraCuandoLaLetraEsIncorrecta()
+        {
+            Logic logic = new Logic();
+            logic.juego.Palabra = "Hola";
+            logic.juego.PalabraIngresada = "*ol*";
+
+            logic.ActualizarPalabraIngresada("F");
+
+            Assert.AreEqual("*ol*", logic.juego.PalabraIngresada);
+        }
+
         //Tests para:
         //  - AñadirPalabraIngresada()
         //  - IngresoLetra()
-
-        //Probable Sprint 5:
-        //  - Informar resultado e IngresoLetra() + ValidarJuego()
     }
+
+
+    //Probable Sprint 5:
+    //  - Informar resultado e IngresoLetra() + ValidarJuego()
+    //  - Validar que la letra ya fue ingresada    [??] <- ValidarLetra()
+    //  - Arriesga palabra                         [??] <- ArriesgaPalabra()
+    //  - Contar turnos [??]
 }

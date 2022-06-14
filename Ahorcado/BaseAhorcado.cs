@@ -22,8 +22,13 @@ namespace Ahorcado
             Nombre = nom;
             Palabra = pal;
             Vidas = vid;
-            PalabraIngresada = "*";
-            for(int i=0; i < (Nombre.Length-1); i++) { PalabraIngresada += "*"; }
+            //PalabraIngresada = "*";
+            //for(int i=0; i < (Nombre.Length-1); i++) { PalabraIngresada += "*"; }
+        }
+
+        public void SetPalabraIngresada(string pal)
+        {
+            for (int i = 0; i < (pal.Length); i++) { PalabraIngresada += "*"; }
         }
     }
 }
