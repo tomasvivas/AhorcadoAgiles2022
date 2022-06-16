@@ -7,11 +7,21 @@ namespace UnitTests
     [TestClass]
     public class Sprint1
     {
-        public Logic logic = new Logic();
+        private Logic _logic;
+
+        public Logic logic
+        {
+            set { _logic = value; }
+            get { return _logic; }
+        }
+        public Sprint1()
+        {
+            logic = new Logic();
+        }
         [TestMethod]
         public void LetraContenidoEnPalabra()
         {
-            Logic logic = new Logic();
+            // Logic logic = new Logic();
             logic.juego = new BaseAhorcado("Test", "uwu", 6);
             string letra = "u";
 
@@ -24,7 +34,7 @@ namespace UnitTests
         [TestMethod]
         public void LetraNoContenidoEnPalabra()
         {
-            Logic logic = new Logic();
+           // Logic logic = new Logic();
             logic.juego = new BaseAhorcado("Test", "uwu", 6);
             string letra = "f";
 
@@ -37,17 +47,27 @@ namespace UnitTests
     [TestClass]
     public class Sprint2
     {
+        private Logic _logic;
+
+        public Logic logic
+        {
+            set { _logic = value; }
+            get { return _logic; }
+        }
+        public Sprint2()
+        {
+            logic = new Logic();
+        }
 
         [TestMethod]
         public void LetraSeAñadeALetrasIncorrectas()
         {
-            Logic logic = new Logic();
-            string letra = "f";
-
-            logic.AgregarLetraIncorrecta(letra);
+            //Logic logic = new Logic();
+            logic.juego.LetrasIncorrectas = "abc";
+            logic.AgregarLetraIncorrecta("f");
             bool resultado;
 
-            if (logic.juego.LetrasIncorrectas == "f")
+            if (logic.juego.LetrasIncorrectas == "abcf")
             {
                 resultado = true;
             }
@@ -56,33 +76,43 @@ namespace UnitTests
             Assert.IsTrue(resultado);
         }
 
-
         [TestMethod]
         public void LetraSeAñadeALetrasCorrectas()
         {
-            Logic logic = new Logic();
-            string letra = "u";
-
-            logic.AgregarLetraCorrecta(letra);
+            //Logic logic = new Logic();
+            logic.juego.LetrasCorrectas = "olh";
+            logic.AgregarLetraCorrecta("a");
             bool resultado;
 
-            if (logic.juego.LetrasCorrectas == "f")
+            if (logic.juego.LetrasCorrectas == "olha")
             {
                 resultado = true;
             }
             else resultado = false;
 
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
         }
     }
 
     [TestClass]
     public class Sprint3
     {
+        private Logic _logic;
+
+        public Logic logic
+        {
+            set { _logic = value; }
+            get { return _logic; }
+        }
+        public Sprint3()
+        {
+            logic = new Logic();
+        }
+
         [TestMethod]
         public void RestarUnaVida()
         {
-            Logic logic = new Logic();
+            //Logic logic = new Logic();
             bool resultado;
 
             logic.juego.Vidas = 6;
@@ -99,7 +129,7 @@ namespace UnitTests
         [TestMethod]
         public void ValidarQueElJuegoContinua() 
         {
-            Logic logic = new Logic();
+            //Logic logic = new Logic();
             logic.juego.Palabra = "Hola";
             logic.juego.PalabraIngresada = "*ol*";
             logic.juego.Vidas = 1;
@@ -117,7 +147,8 @@ namespace UnitTests
         [TestMethod]
         public void ValidarJuegoPerdido()
         {
-            Logic logic = new Logic();
+            //Logic logic = new Logic();
+            //No es redundante instanciar la Palabra y la palabraIngresada?
             logic.juego.Palabra = "Hola";
             logic.juego.PalabraIngresada = "*ol*";
             logic.juego.Vidas = 0;
@@ -152,12 +183,23 @@ namespace UnitTests
     }
 
     [TestClass]
-    public class Sprint4 
+    public class Sprint4
     {
+        private Logic _logic;
+
+        public Logic logic
+        {
+            set { _logic = value; }
+            get { return _logic; }
+        }
+        public Sprint4()
+        {
+            logic = new Logic();
+        }
         [TestMethod]
         public void InicializarPalabraIngresada()
         {
-            Logic logic = new Logic();
+            //Logic logic = new Logic();
             logic.juego.Palabra = "Hola";
 
             logic.juego.SetPalabraIngresada(logic.juego.Palabra);
@@ -168,7 +210,7 @@ namespace UnitTests
         [TestMethod]
         public void ModificarPalabraIngresadaConLetraCorrecta()
         {
-            Logic logic = new Logic();
+            //Logic logic = new Logic();
             logic.juego.Palabra = "Hola";
             logic.juego.PalabraIngresada = "*ol*";
 
@@ -180,7 +222,7 @@ namespace UnitTests
         [TestMethod]
         public void NoSeModificaLaPalabraCuandoLaLetraEsIncorrecta()
         {
-            Logic logic = new Logic();
+            //Logic logic = new Logic();
             logic.juego.Palabra = "Hola";
             logic.juego.PalabraIngresada = "*ol*";
 
@@ -189,6 +231,23 @@ namespace UnitTests
             Assert.AreEqual("*ol*", logic.juego.PalabraIngresada);
         }
 
+        [TestMethod]
+        public void SeIngresaPalabraCorrectaaaa()
+        {
+            logic.juego.Palabra = "cinto";
+            logic.juego.PalabraIngresada = "c*n**";
+            logic.juego.Vidas = 2;
+            Assert.AreEqual(true, logic.ArriesgarPalabra("cinto"));
+        }
+
+        [TestMethod]
+        public void SeIngresaPalabraIncorrectaaaa()
+        {
+            logic.juego.Palabra = "orcas";
+            logic.juego.PalabraIngresada = "*r*as";
+            logic.juego.Vidas = 2;
+            Assert.AreEqual(false, logic.ArriesgarPalabra("urnas"));
+        }
         //Tests para:
         //  - AñadirPalabraIngresada()
         //  - IngresoLetra()

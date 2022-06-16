@@ -10,7 +10,18 @@ namespace Ahorcado
     {
 
         public BaseAhorcado juego = new BaseAhorcado();
+        private Boolean _arriesgoPalabra = false;
 
+        public Boolean ArriesgoPalabra
+        {
+            get { return _arriesgoPalabra; }
+            set { ArriesgoPalabra = value; }
+        }
+
+        public Logic()
+        {
+            ArriesgoPalabra = false;
+        }
         #region
         //Código viejo
 
@@ -54,7 +65,7 @@ namespace Ahorcado
 
         public int ValidarJuego()
         {
-            if (juego.Vidas <= 0)
+            if ((juego.Vidas <= 0) || ((ArriesgoPalabra == true ) && (juego.Palabra != juego.PalabraIngresada)))
                 return 2;
             if (juego.Palabra == juego.PalabraIngresada)
                 return 3;
@@ -98,25 +109,39 @@ namespace Ahorcado
 
         public bool IngresoLetra(string letra) //se ingresa una letra, se modifican los parametros del juego y se responde si la letra es correcta o incorrecta
         {
-            //se ingresa una letra
-            bool resultado = false;
+                //se ingresa una letra
+                bool resultado = false;
 
-            //se comprueba si existe en la palabra y se añade a la lista correspondiente
-            // AÑADIR: se informa si la letra es correcta o no y modificar palabra ingresada <- ActualizarPalabraIngresada()
-            if (ValidarLetra(letra) == true)
-            { 
-                AgregarLetraCorrecta(letra);
-                ActualizarPalabraIngresada(letra);
-                resultado = true;
+                //se comprueba si existe en la palabra y se añade a la lista correspondiente
+                // AÑADIR: se informa si la letra es correcta o no y modificar palabra ingresada <- ActualizarPalabraIngresada()
+                if (ValidarLetra(letra) == true)
+                {
+                    AgregarLetraCorrecta(letra);
+                    ActualizarPalabraIngresada(letra);
+                    resultado = true;
+                }
+                else
+                {
+                    AgregarLetraIncorrecta(letra);
+                    RestarVida();
+                    resultado = false;
+                }
+ 
+            return resultado;
+        }
+
+        public bool ArriesgarPalabra(string p)
+        {
+            juego.PalabraIngresada = p;
+            ArriesgoPalabra = true;
+            if(ValidarJuego() == 3)
+            {
+                return true; //gano
             }
             else
             {
-                AgregarLetraIncorrecta(letra);
-                RestarVida();
-                resultado = false;
+                return false; //perdio
             }
-
-            return resultado;
         }
 
         //Queda:
