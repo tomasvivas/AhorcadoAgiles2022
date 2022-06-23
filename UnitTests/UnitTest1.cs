@@ -248,12 +248,46 @@ namespace UnitTests
             logic.juego.Vidas = 2;
             Assert.AreEqual(false, logic.ArriesgarPalabra("urnas"));
         }
+
         //Tests para:
-        //  - AñadirPalabraIngresada()
+        //  - AñadirPalabraIngresada() 
         //  - IngresoLetra()
     }
 
+    [TestClass]
+    public class Sprint5
+    {
+        private Logic _logic;
 
+        public Logic logic
+        {
+            set { _logic = value; }
+            get { return _logic; }
+        }
+        public Sprint5()
+        {
+            logic = new Logic();
+        }
+
+        [TestMethod]
+        public void ValidarLetraRepetidaIncorrecta()
+        {
+            logic.juego.LetrasIncorrectas = "abe";
+            
+            Assert.AreEqual(true,logic.incorrectaRepetida("a"));
+
+        }
+
+        [TestMethod]
+
+        public void ValidarLetraRepetidaCorrecta()
+        {
+            logic.juego.LetrasCorrectas = "suda";
+            
+            Assert.AreEqual(true, logic.correctaRepetida("u"));
+
+        }
+    }
     //Probable Sprint 5:
     //  - Informar resultado e IngresoLetra() + ValidarJuego()
     //  - Validar que la letra ya fue ingresada    [??] <- ValidarLetra()

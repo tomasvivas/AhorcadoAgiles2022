@@ -15,7 +15,7 @@ namespace Ahorcado
         public Boolean ArriesgoPalabra
         {
             get { return _arriesgoPalabra; }
-            set { ArriesgoPalabra = value; }
+            set { _arriesgoPalabra = value; }
         }
 
         public Logic()
@@ -65,7 +65,7 @@ namespace Ahorcado
 
         public int ValidarJuego()
         {
-            if ((juego.Vidas <= 0) || ((ArriesgoPalabra == true ) && (juego.Palabra != juego.PalabraIngresada)))
+            if ((juego.Vidas <= 0) || ((ArriesgoPalabra == true) && (juego.Palabra != juego.PalabraIngresada)))
                 return 2;
             if (juego.Palabra == juego.PalabraIngresada)
                 return 3;
@@ -79,7 +79,7 @@ namespace Ahorcado
             char[] l = letra.ToCharArray();
             char[] p = juego.PalabraIngresada.ToCharArray();
 
-            for (int i = 0; i <= juego.Palabra.Length-1; i++)
+            for (int i = 0; i <= juego.Palabra.Length - 1; i++)
             {
                 #region
                 /*
@@ -99,34 +99,34 @@ namespace Ahorcado
                     juego.PalabraIngresada = pre + letra + pos;
                 }*/
                 #endregion
-                if (juego.Palabra[i] == l[0]) 
+                if (juego.Palabra[i] == l[0])
                 {
                     p[i] = l[0];
                 }
             }
-            juego.PalabraIngresada = string.Join("",p);
+            juego.PalabraIngresada = string.Join("", p);
         }
 
         public bool IngresoLetra(string letra) //se ingresa una letra, se modifican los parametros del juego y se responde si la letra es correcta o incorrecta
         {
-                //se ingresa una letra
-                bool resultado = false;
+            //se ingresa una letra
+            bool resultado = false;
 
-                //se comprueba si existe en la palabra y se añade a la lista correspondiente
-                // AÑADIR: se informa si la letra es correcta o no y modificar palabra ingresada <- ActualizarPalabraIngresada()
-                if (ValidarLetra(letra) == true)
-                {
-                    AgregarLetraCorrecta(letra);
-                    ActualizarPalabraIngresada(letra);
-                    resultado = true;
-                }
-                else
-                {
-                    AgregarLetraIncorrecta(letra);
-                    RestarVida();
-                    resultado = false;
-                }
- 
+            //se comprueba si existe en la palabra y se añade a la lista correspondiente
+            // AÑADIR: se informa si la letra es correcta o no y modificar palabra ingresada <- ActualizarPalabraIngresada()
+            if (ValidarLetra(letra) == true)
+            {
+                AgregarLetraCorrecta(letra);
+                ActualizarPalabraIngresada(letra);
+                resultado = true;
+            }
+            else
+            {
+                AgregarLetraIncorrecta(letra);
+                RestarVida();
+                resultado = false;
+            }
+
             return resultado;
         }
 
@@ -134,7 +134,7 @@ namespace Ahorcado
         {
             juego.PalabraIngresada = p;
             ArriesgoPalabra = true;
-            if(ValidarJuego() == 3)
+            if (ValidarJuego() == 3)
             {
                 return true; //gano
             }
@@ -143,6 +143,17 @@ namespace Ahorcado
                 return false; //perdio
             }
         }
+
+        public bool incorrectaRepetida(string l)
+        {
+            return juego.LetrasIncorrectas.Contains(l);
+        }
+
+        public bool correctaRepetida(string l)
+        {
+            return juego.LetrasCorrectas.Contains(l);
+        }
+    }
 
         //Queda:
         // -Sumar IngresoLetra() y ValidarJuego()
@@ -205,4 +216,4 @@ namespace Ahorcado
          }*/
         #endregion //Eliminar en MVP
     }
-}
+

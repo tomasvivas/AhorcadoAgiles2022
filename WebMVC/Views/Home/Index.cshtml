@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Views/Home/IndexCSS.css" media="screen" />
+    <title>Ahorcado</title>
+</head>
+<body>
+    <header>
+        <h1>Ahorcado</h1>
+    </header>
+    <article>
+       @using (Html.BeginForm("IngresoLetra", "Home", FormMethod.Post))
+       { 
+        @Html.Label("Ingrese una letra o palabra");
+        @Html.TextBox("txtLetra");
+        <input type="submit" id="btnEnviar" name="btnEnviar" value="Ingresar" />
+        }
+    </article>
+</body>
+</html>

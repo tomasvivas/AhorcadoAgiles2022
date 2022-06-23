@@ -8,12 +8,20 @@ namespace Ahorcado
 {
     public class BaseAhorcado
     {
-        public string Nombre { get; set; }
-        public string Palabra { get; set; }
-        public string LetrasIncorrectas { get; set; }
-        public string LetrasCorrectas { get; set; }
-        public int Vidas { get; set; }
-        public string PalabraIngresada { get; set; }
+        private string _nombre;
+        private string _palabra;
+        private string _letrasIncorrectas;
+        private string _letrasCorrectas;
+        private int _vidas;
+        private string _palabraIngresada;
+
+        public string Nombre { get { return _nombre; } set { _nombre = value; } }
+        public string Palabra { get { return _palabra; } set { _palabra = value; } }
+        public string LetrasIncorrectas { get { return _letrasIncorrectas; } set { _letrasIncorrectas = value; } }
+        public string LetrasCorrectas { get { return _letrasCorrectas; } set { _letrasCorrectas = value; } }
+        public int Vidas { get { return _vidas; } set { _vidas = value; } }
+        public string PalabraIngresada { get { return _palabraIngresada; } set { _palabraIngresada = value; } }
+
 
         public BaseAhorcado()
         { }

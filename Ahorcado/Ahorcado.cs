@@ -9,15 +9,65 @@ namespace Ahorcado
     public class Main
     {
         //readonly static char[] alfabeto = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+        public enum estadoAccion
+        {
+            repetida,
+            acerto,
+            fallo
+        }
 
+        public enum estadoJuego
+        {
+            Perdio,
+            Gano,
+            enJuego
+        }
         public static string[] letrasIngresadas;
 
-        readonly BaseAhorcado juego = new BaseAhorcado();
+        private Logic _log;
+        public Logic log
+        {
+            set { _log = value; }
+            get { return _log; }
+        }
 
+        public Main()
+        {
+            log = new Logic();
+        }
+
+        public estadoAccion IngresoLetra(string p)
+        {
+            if(log.incorrectaRepetida(p) || log.correctaRepetida(p))
+            {
+                return estadoAccion.repetida;
+            } else if (log.IngresoLetra(p))
+            {
+                return estadoAccion.acerto;
+            } else
+            {
+                return estadoAccion.fallo;
+            }
+        }
+
+        public estadoJuego IngresoPalabra(string p)
+        {
+            if (log.ArriesgarPalabra(p))
+            {
+                return estadoJuego.Gano;
+            } else
+            {
+                return estadoJuego.Perdio;
+            }
+        }
         public void Play()
         {
-            juego.Nombre = "Tomy";
-            juego.Palabra = "uwu";
+            log.juego.Nombre = "Garate";
+            log.juego.Palabra = "hola";
+            log.juego.PalabraIngresada = "hol*";
+            log.juego.LetrasCorrectas = "lho";
+            log.juego.Vidas = 1;
+            log.juego.LetrasIncorrectas = "m";
 
 
         }
