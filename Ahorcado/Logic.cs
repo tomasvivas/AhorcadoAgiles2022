@@ -77,6 +77,7 @@ namespace Ahorcado
         {
             //string pre, pos;
             char[] l = letra.ToCharArray();
+            string a = juego.PalabraIngresada;
             char[] p = juego.PalabraIngresada.ToCharArray();
 
             for (int i = 0; i <= juego.Palabra.Length - 1; i++)
@@ -104,7 +105,9 @@ namespace Ahorcado
                     p[i] = l[0];
                 }
             }
+            char[] p1 = p;
             juego.PalabraIngresada = string.Join("", p);
+
         }
 
         public bool IngresoLetra(string letra) //se ingresa una letra, se modifican los parametros del juego y se responde si la letra es correcta o incorrecta
@@ -118,12 +121,14 @@ namespace Ahorcado
             {
                 AgregarLetraCorrecta(letra);
                 ActualizarPalabraIngresada(letra);
+                string a = juego.PalabraIngresada;
                 resultado = true;
             }
             else
             {
                 AgregarLetraIncorrecta(letra);
                 RestarVida();
+                int v = juego.Vidas;
                 resultado = false;
             }
 

@@ -13,7 +13,8 @@ namespace Ahorcado
         {
             repetida,
             acerto,
-            fallo
+            fallo,
+            primeraVez
         }
 
         public enum estadoJuego
@@ -64,10 +65,10 @@ namespace Ahorcado
         {
             log.juego.Nombre = "Garate";
             log.juego.Palabra = "hola";
-            log.juego.PalabraIngresada = "hol*";
-            log.juego.LetrasCorrectas = "lho";
-            log.juego.Vidas = 1;
-            log.juego.LetrasIncorrectas = "m";
+            log.juego.PalabraIngresada = "****";
+            log.juego.LetrasCorrectas = " ";
+            log.juego.Vidas = 5;
+            log.juego.LetrasIncorrectas = " ";
 
 
         }

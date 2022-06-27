@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Views/Home/IndexCSS.css" media="screen" />
+    <title>Ahorcado</title>
+</head>
+<body>
+    <header>
+        <h1>Ahorcado</h1>
+    </header>
+    <article>
+        <nav>
+            <div>Vidas: @ViewBag.cantVidas/5</div>
+            <div>Letras: @ViewBag.letrasIncorrectas</div>
+        </nav>
+        <article>
+            <p>@ViewBag.palabraIngresada</p><br />
+            <p>@ViewBag.listaIncorrectas</p>
+        </article>
+        <footer>
+            @using (Html.BeginForm("IngresoLetra", "juego", FormMethod.Post))
+            {
+                @Html.Label("Ingrese una letra o palabra");
+                @Html.TextBox("txtLetra");
+                <input type="submit" id="btnEnviar" name="btnEnviar" value="Ingresar" />
+            }
+        </footer>
+    </article>
+</body>
+</html>

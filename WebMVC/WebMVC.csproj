@@ -89,12 +89,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Views\Home\IndexCSS.css" />
+    <Content Include="Views\juego\IndexCSS.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\juegoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -103,9 +104,11 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\juego\Index.cshtml" />
+    <Content Include="Views\juego\Gano.cshtml" />
+    <Content Include="Views\juego\IngresoPalabra.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Gano.cshtml" />
-    <Content Include="Views\Home\IngresoPalabra.cshtml" />
+    <Content Include="Views\juego\Perdio.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
