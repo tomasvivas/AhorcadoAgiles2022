@@ -1,7 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Ahorcado;
-//prueba
+using OpenQA.Selenium.Chrome;
+
 
 namespace UnitTests
 {
@@ -43,6 +44,17 @@ namespace UnitTests
 
             Assert.IsFalse(resultado);
         }
+
+        /*
+        [TestMethod]
+        public void AbrirChrome()
+        {
+            var driver = new ChromeDriver();
+
+            driver.Navigate().GoToUrl("https://google.com/");
+
+            driver.Quit();
+        }*/
     }
 
     [TestClass]
