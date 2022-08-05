@@ -65,7 +65,7 @@ namespace Ahorcado
         {
             log.juego.Nombre = "Garate";
             log.juego.Palabra = "hola";
-            log.juego.PalabraIngresada = "****";
+            log.juego.PalabraIngresada = "____";
             log.juego.LetrasCorrectas = " ";
             log.juego.Vidas = 5;
             log.juego.LetrasIncorrectas = " ";

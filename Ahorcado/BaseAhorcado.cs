@@ -36,7 +36,7 @@ namespace Ahorcado
 
         public void SetPalabraIngresada(string pal)
         {
-            for (int i = 0; i < (pal.Length); i++) { PalabraIngresada += "*"; }
+            for (int i = 0; i < (pal.Length); i++) { PalabraIngresada += "_"; }
         }
     }
 }

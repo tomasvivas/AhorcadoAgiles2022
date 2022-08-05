@@ -1,0 +1,105 @@
+﻿* {
+    #padding: 0;
+    margin: 0;
+}
+body {
+    background-color: black;
+}
+
+header {
+    padding: 50px;
+}
+
+h1 {
+    font-family: 'Bebas Neue';
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 0px 0px 15px #8a6b9d;
+}
+
+#palabraIngresada {
+    color: #4300c2;
+    letter-spacing: 15px;
+    font-size: 60px;
+    font-weight: 900;
+    font-family: 'bitter';
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+#principalArticle {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+}
+
+#vidas {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'bitter';
+    color: #ff0000;
+}
+
+.material-symbols-outlined {
+    color: #ff0000;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    background-color: #cbcbcb;
+    align-content: center;
+    padding: 6px;
+}
+
+#txtLetra {
+    background-color: red;
+    width: 270px;
+    height: 30px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: #cbcbcb;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 4px 9px;
+    color: #1e1e1e;
+    font-family: Roboto;
+}
+
+#letras {
+    font-family: Roboto;
+    font-size: 26px;
+    color: #111111;
+    padding-top: 10px;
+    padding-right: 30px;
+    letter-spacing: 4px;
+    text-align: right;
+}
+
+#btnEnviar {
+    width: 60px;
+    height: 33px;
+    border: 1px none;
+    background-color: #bd0090;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+}
+
+#btnEnviar:hover {
+    background-color: #a325de;
+    cursor: pointer;
+}
+
+.text {
+    font-family: Roboto;
+    color: #111111;
+}
+
+footer {
+    margin-top: 30px;
+}

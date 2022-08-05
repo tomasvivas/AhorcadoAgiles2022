@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+   
 }
 
 <!DOCTYPE html>
@@ -8,28 +8,40 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="~/Views/Home/IndexCSS.css" media="screen" />
+    <link href="@Url.Content("/Content/IndexCSS.css")" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,1,200" />
+
     <title>Ahorcado</title>
 </head>
 <body>
     <header>
         <h1>Ahorcado</h1>
     </header>
-    <article>
+    <article id="principalArticle">
         <nav>
-            <div>Vidas: @ViewBag.cantVidas/5</div>
-            <div>Letras: @ViewBag.letrasIncorrectas</div>
+            <span class="material-symbols-outlined">
+                favorite 
+            </span>
+            <div id="vidas">@ViewBag.cantVidas / 5</div>
+   
+
+
+            
         </nav>
         <article>
-            <p>@ViewBag.palabraIngresada</p><br />
-            <p>@ViewBag.listaIncorrectas</p>
+            <div id="letras">@ViewBag.listaIncorrectas</div>
+            <p id="palabraIngresada">@ViewBag.palabraIngresada</p><br />
         </article>
         <footer>
             @using (Html.BeginForm("IngresoLetra", "juego", FormMethod.Post))
             {
-                @Html.Label("Ingrese una letra o palabra");
+                @Html.Label("Ingrese una letra o palabra \n", new { @class = "text" });
+                <br/>
                 @Html.TextBox("txtLetra");
-                <input type="submit" id="btnEnviar" name="btnEnviar" value="Ingresar" />
+                <input type="submit" id="btnEnviar" name="btnEnviar" value=">" />
             }
         </footer>
     </article>
