@@ -116,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Drivers\" />
+    <Folder Include="Given\" />
+    <Folder Include="Then\" />
+    <Folder Include="When\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

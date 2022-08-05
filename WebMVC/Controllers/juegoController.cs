@@ -33,7 +33,7 @@ namespace WebMVC.Controllers
             {
                 case Main.estadoAccion.primeraVez:
                     ViewBag.cantVidas =  HomeController.nuevoJuego.log.juego.Vidas;
-                    ViewBag.palabraIngresada = "_____";
+                    ViewBag.palabraIngresada = "____";
                     return View();
 
                 default:
