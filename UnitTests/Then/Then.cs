@@ -5,40 +5,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
+using FluentAssertions;
+
 
 namespace UnitTests.Then
 {
     internal class Then
     {
+
         private IWebDriver _webDriver;
 
         public void PageObject(IWebDriver webDriver)
         {
             _webDriver = webDriver;
         }
+        private IWebElement Palabra => _webDriver.FindElement(By.Id("palabraIngresada"));
+        private IWebElement Vidas => _webDriver.FindElement(By.Id("vidas"));
+        private IWebElement Incorrectas => _webDriver.FindElement(By.Id("letras"));
 
-        private IWebElement TextoIngresar => _webDriver.FindElement(By.Id("txtLetra"));
-        private IWebElement BtnEnviar => _webDriver.FindElement(By.Id("btnEnviar"));
 
-        [When("Usuario ingresa una letra (.*)")]
-        public void WhenUsuarioIngresaLetra(string letter)
+        [Then("La letra se muestra en la palabra a adivinar")]
+        public void ThenLetraSeMuestraEnPalabra(string letter)
         {
-            TextoIngresar.Clear();
-            TextoIngresar.SendKeys(letter);
-            BtnEnviar.Click();
-
+            Palabra.ToString().Should().Contain(letter);
         }
 
-        [When("Usuario ingresa todas las letras (.*)")]
-        public void WhenUsuarioIngresaLetras(Array letras)
+        [Then("Se descuenta un punto de vida")]
+        public void ThenPierdeVida()
         {
-            TextoIngresar.Clear();
-            foreach (string letrasItem in letras)
-            {
-                TextoIngresar.SendKeys(letrasItem);
-            }
-            BtnEnviar.Click();
-
+            Vidas.ToString().Should().Contain("4/5");
         }
+
+        [Then("La letra se muestra en letras incorrectas")]
+        public void ThenLetraSeMeMuestraEnIncorrectas(string letter)
+        {
+            Incorrectas.ToString().Should().Contain(letter);
+        }
+
+        [Then("Usuario gana la partida")]
+        public void ThenGanaPartida()
+        {
+            //
+        }
+        [Then("Usuario pierde la partida")]
+        public void ThenPierdePartida()
+        {
+            //
+        }
+
     }
 }

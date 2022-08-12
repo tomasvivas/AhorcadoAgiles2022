@@ -18,7 +18,8 @@ Scenario: Usuario ingresa una letra correcta
 Scenario: Usuario ingresa una letra incorrecta
 	Given Usuario ingresa una <Palabra>
 	When Usuario ingresa una letra <Incorrecta>
-	Then Se descuenta un punto de vida y la letra se muestra en letras incorrectas
+	Then Se descuenta un punto de vida
+	 And La letra se muestra en letras incorrectas
 
 	Examples:
 	| Palabra           | Incorrecta |
