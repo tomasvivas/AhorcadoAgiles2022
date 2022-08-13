@@ -22,7 +22,7 @@ namespace Ahorcado
         public int Vidas { get { return _vidas; } set { _vidas = value; } }
         public string PalabraIngresada { get { return _palabraIngresada; } set { _palabraIngresada = value; } }
 
-
+  
         public BaseAhorcado()
         { }
         public BaseAhorcado(string nom, string pal, int vid)

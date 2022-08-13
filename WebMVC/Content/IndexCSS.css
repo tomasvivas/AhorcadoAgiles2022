@@ -18,6 +18,14 @@ h1 {
     text-shadow: 0px 0px 15px #8a6b9d;
 }
 
+h3 {
+    font-family: Montserrat;
+    color: #111111;
+    text-align: right;
+    font-size: 19px;
+    padding: 1em;
+}
+
 #palabraIngresada {
     color: #4300c2;
     letter-spacing: 15px;
@@ -79,9 +87,8 @@ nav {
     text-align: right;
 }
 
-#btnEnviar {
-    width: 60px;
-    height: 33px;
+.btn {
+    
     border: 1px none;
     background-color: #bd0090;
     border-radius: 5px;
@@ -90,7 +97,17 @@ nav {
     color: white;
 }
 
-#btnEnviar:hover {
+.btnMain {
+    width: 40px;
+    height: 34px;
+
+}
+.btnVolver {
+    padding: 15px;
+    margin-bottom: 3em;
+}
+
+.btn:hover {
     background-color: #a325de;
     cursor: pointer;
 }
@@ -102,4 +119,42 @@ nav {
 
 footer {
     margin-top: 30px;
+}
+
+#gano {
+    font-family: 'Poppins', sans-serif;
+    color: #79d80e;
+    font-size: 4em;
+    font-weight: 600;
+}
+
+.resultArticle {
+    padding: 2em;
+}
+
+#celebrateImage {
+    padding-top: 10em;
+    background-image: url("https://img.freepik.com/vector-gratis/amigos-felices-celebrando-evento-juntos_74855-7482.jpg?w=1380&t=st=1660411035~exp=1660411635~hmac=bfbefdda4438e7646a9a085277752e544ebc62a860c1f875f99b1011efaa97e7");
+    width: 100%;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#lostImage {
+    padding-top: 10em;
+    background-image: url("https://img.freepik.com/vector-gratis/ilustracion-concepto-ansiedad_114360-8014.jpg?w=826&t=st=1660412639~exp=1660413239~hmac=f63c8ff0e58d49dabe2e897803dd74653911f7c873f5392ea42760b562c3b4d5");
+    width: 100%;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#lost {
+    font-family: 'Poppins', sans-serif;
+    color: #d41212;
+    font-size: 4em;
+    font-weight: 600;
 }

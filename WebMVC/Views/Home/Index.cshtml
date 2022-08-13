@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
 <!DOCTYPE html>
@@ -8,10 +8,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("/Content/IndexCSS.css")" rel="stylesheet" type="text/css" />
     <title>Index</title>
 </head>
 <body>
-    <div> 
-    </div>
+    <article class="resultArticle">
+        @using (Html.BeginForm("IngresoNombre", "Home", FormMethod.Post))
+        {
+            @Html.Label("Ingrese su nombre \n", new { @class = "text" });
+            <br />
+            @Html.TextBox("txtLetra");
+            <input type="submit" class="btn btnMain" name="btnEnviar" value=">" />
+        }
+    </article>
 </body>
 </html>

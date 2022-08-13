@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
 <!DOCTYPE html>
@@ -11,8 +11,13 @@
     <title>Perdio</title>
 </head>
 <body>
-    <div> 
-        <p>Perdiste</p>
-    </div>
+    <header id="lostImage">
+    </header>
+    <article class="resultArticle">
+        <p id="lost">No has acertado :(</p>
+    </article>
+    <footer>
+        <input type="button" , class="btn btnVolver" , value="Volver a jugar" onclick="location.href='@Url.Action("Index", "Home")'" />
+    </footer>
 </body>
 </html>

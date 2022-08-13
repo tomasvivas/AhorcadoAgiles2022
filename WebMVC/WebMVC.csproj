@@ -184,6 +184,7 @@
     <Content Include="Views\juego\IngresoPalabra.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\juego\Perdio.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

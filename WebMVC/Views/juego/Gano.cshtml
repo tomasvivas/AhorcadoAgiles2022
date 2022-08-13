@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
 <!DOCTYPE html>
@@ -8,11 +8,17 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("/Content/IndexCSS.css")" rel="stylesheet" type="text/css" />
     <title>Gano</title>
 </head>
 <body>
-    <div> 
-        <p>ganaste</p>
-    </div>
+    <header id="celebrateImage">
+    </header>
+    <article class="resultArticle">
+        <p id="gano">Felicidades!! Has acertado</p>
+    </article>
+    <footer>
+        <input type="button", class="btn btnVolver", value="Volver a jugar" onclick="location.href='@Url.Action("Index", "Home")'" />
+    </footer>
 </body>
 </html>

@@ -9,30 +9,15 @@ namespace WebMVC.Controllers
 {
     public class juegoController : Controller
     {
-        /* private Main _nuevoJuego;
-
-                public Main nuevoJuego
-                {
-                    get{ return _nuevoJuego;  }
-                    set { _nuevoJuego = value; }
-                }*/
-        /* public HomeController()
-         {
-             //nuevoJuego = new Main();
-            // nuevoJuego.Play();
-         }*/
-        // GET: Home
-
-        
-
 
         [HttpGet]
-        public ActionResult Index(/*Main.estadoAccion est = Main.estadoAccion.primeraVez, int vidas = 0, string palabraIngresada = "a"*/)
+        public ActionResult Index()
         {
             switch (HomeController.estadoAccion)
             {
                 case Main.estadoAccion.primeraVez:
                     ViewBag.cantVidas =  HomeController.nuevoJuego.log.juego.Vidas;
+                    ViewBag.nombre = HomeController.nuevoJuego.log.juego.Nombre;
                     ViewBag.palabraIngresada = "____";
                     return View();
 
@@ -40,6 +25,7 @@ namespace WebMVC.Controllers
                     ViewBag.cantVidas = HomeController.vidas;
                     ViewBag.palabraIngresada = HomeController.palabraIngresada;
                     ViewBag.listaIncorrectas = HomeController.listaIncorrectas;
+                    ViewBag.nombre = HomeController.nuevoJuego.log.juego.Nombre;
                     return View();
             }
 
@@ -101,11 +87,10 @@ namespace WebMVC.Controllers
             switch (resultado)
             {
                 case Main.estadoJuego.Gano:
-                    ViewBag.mensaje = "Ganaste";
-                    return View();
+                    return RedirectToAction("Gano");
+
                 case Main.estadoJuego.Perdio:
-                    ViewBag.mensaje = "Perdiste";
-                    return View();
+                    return RedirectToAction("Perdio");
             }
             return View();
         }

@@ -12,7 +12,7 @@ namespace WebMVC.Controllers
     {
   
 
-        static private Main _nuevoJuego;
+        private static Main _nuevoJuego;
         
         static public Main nuevoJuego
         {
@@ -52,13 +52,23 @@ namespace WebMVC.Controllers
 
         public HomeController()
         {
-            nuevoJuego = new Main();
-            nuevoJuego.Play();
+           
         }
         // GET: Home
         public ActionResult Index()
         {
-            return RedirectToAction("Index","juego");
+            
+            return View();
+           // return RedirectToAction("Index","juego");
+        }
+
+        public ActionResult IngresoNombre(FormCollection coleccion)
+        {
+            estadoAccion = Main.estadoAccion.primeraVez;
+            nuevoJuego = new Main();
+            nuevoJuego.log.juego.Nombre = coleccion["txtLetra"];
+            nuevoJuego.Play();
+            return RedirectToAction("Index", "juego");
         }
     }
 }

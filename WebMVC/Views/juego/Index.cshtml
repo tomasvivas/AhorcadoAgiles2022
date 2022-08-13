@@ -1,6 +1,6 @@
 ﻿
 @{
-   
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
 <!DOCTYPE html>
@@ -8,6 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+
     <link href="@Url.Content("/Content/IndexCSS.css")" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,20 +18,16 @@
     <title>Ahorcado</title>
 </head>
 <body>
-    <header>
-        <h1>Ahorcado</h1>
-    </header>
+  
     <article id="principalArticle">
         <nav>
             <span class="material-symbols-outlined">
-                favorite 
+                favorite
             </span>
             <div id="vidas">@ViewBag.cantVidas / 5</div>
-   
-
-
-            
         </nav>
+        <h3>Bienvenido @ViewBag.nombre</h3>
+
         <article>
             <div id="letras">@ViewBag.listaIncorrectas</div>
             <p id="palabraIngresada">@ViewBag.palabraIngresada</p><br />
@@ -39,9 +36,9 @@
             @using (Html.BeginForm("IngresoLetra", "juego", FormMethod.Post))
             {
                 @Html.Label("Ingrese una letra o palabra \n", new { @class = "text" });
-                <br/>
+                <br />
                 @Html.TextBox("txtLetra");
-                <input type="submit" id="btnEnviar" name="btnEnviar" value=">" />
+                <input type="submit" class="btn btnMain" name="btnEnviar" value=">" />
             }
         </footer>
     </article>

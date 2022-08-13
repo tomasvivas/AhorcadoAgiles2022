@@ -63,7 +63,6 @@ namespace Ahorcado
         }
         public void Play()
         {
-            log.juego.Nombre = "Garate";
             log.juego.Palabra = "hola";
             log.juego.PalabraIngresada = "____";
             log.juego.LetrasCorrectas = " ";
