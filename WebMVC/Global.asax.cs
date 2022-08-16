@@ -24,6 +24,7 @@ namespace WebMVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             nuevoJuego = new Main();
             nuevoJuego.Play("serpiente");
+
         }
     }
 }

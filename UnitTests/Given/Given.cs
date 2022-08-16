@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Ahorcado;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace UnitTests.Given
             TextoIngresar.Clear();
             TextoIngresar.SendKeys("Tomas");
             BtnEnviar.Click();
-             
+            
         }
     }
 }

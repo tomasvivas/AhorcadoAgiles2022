@@ -67,7 +67,11 @@ namespace WebMVC.Controllers
             estadoAccion = Main.estadoAccion.primeraVez;
             nuevoJuego = new Main();
             nuevoJuego.log.juego.Nombre = coleccion["txtLetra"];
-            nuevoJuego.Play("serpiente");
+            List<string> palabras = new List<string>() { "serpiente","pato","reactor nuclear","barbero","programacion"};
+
+            var rnd = new Random();
+            var randomized = palabras.OrderBy(item => rnd.Next());
+            nuevoJuego.Play(randomized.First());
             return RedirectToAction("Index", "juego");
         }
     }
