@@ -67,7 +67,7 @@ namespace WebMVC.Controllers
             estadoAccion = Main.estadoAccion.primeraVez;
             nuevoJuego = new Main();
             nuevoJuego.log.juego.Nombre = coleccion["txtLetra"];
-            nuevoJuego.Play();
+            nuevoJuego.Play("serpiente");
             return RedirectToAction("Index", "juego");
         }
     }

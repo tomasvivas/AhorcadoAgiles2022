@@ -61,10 +61,15 @@ namespace Ahorcado
                 return estadoJuego.Perdio;
             }
         }
-        public void Play()
+        public void Play(string palabra)
         {
-            log.juego.Palabra = "hola";
-            log.juego.PalabraIngresada = "____";
+            log.juego.Palabra = palabra;
+            string largo = "";
+            for (int i = 0; i < palabra.Length; i++)
+            {
+                largo = largo + '_';
+            };
+            log.juego.PalabraIngresada = largo;
             log.juego.LetrasCorrectas = " ";
             log.juego.Vidas = 5;
             log.juego.LetrasIncorrectas = " ";

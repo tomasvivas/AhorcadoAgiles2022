@@ -18,7 +18,7 @@ namespace WebMVC.Controllers
                 case Main.estadoAccion.primeraVez:
                     ViewBag.cantVidas =  HomeController.nuevoJuego.log.juego.Vidas;
                     ViewBag.nombre = HomeController.nuevoJuego.log.juego.Nombre;
-                    ViewBag.palabraIngresada = "____";
+                    ViewBag.palabraIngresada = HomeController.nuevoJuego.log.juego.PalabraIngresada;
                     return View();
 
                 default:

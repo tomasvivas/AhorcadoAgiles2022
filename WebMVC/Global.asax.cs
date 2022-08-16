@@ -23,7 +23,7 @@ namespace WebMVC
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             nuevoJuego = new Main();
-            nuevoJuego.Play();
+            nuevoJuego.Play("serpiente");
         }
     }
 }

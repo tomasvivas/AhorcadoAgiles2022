@@ -17,15 +17,15 @@ namespace UnitTests.Given
             _webDriver = webDriver;
         }
 
-        //private IWebElement TextoIngresar => _webDriver.FindElement(By.Id("txtLetra"));
-        //private IWebElement BtnEnviar => _webDriver.FindElement(By.Id("btnEnviar"));
+        private IWebElement TextoIngresar => _webDriver.FindElement(By.Id("txtLetra"));
+        private IWebElement BtnEnviar => _webDriver.FindElement(By.ClassName(".btnMain"));
 
         [Given("Usuario ingresa una (.*)")]
         public void GivenUsuarioIngresaPalabra(string word)
         {
-            //TextoIngresar.Clear();
-            //TextoIngresar.SendKeys(word);
-            //BtnEnviar.Click();
+            TextoIngresar.Clear();
+            TextoIngresar.SendKeys("Tomas");
+            BtnEnviar.Click();
              
         }
     }
