@@ -19,7 +19,7 @@ h1 {
 }
 
 h3 {
-    font-family: Montserrat;
+    font-family: 'Bebas Neue';
     color: #111111;
     text-align: right;
     font-size: 19px;
@@ -64,7 +64,8 @@ nav {
 }
 
 #txtLetra {
-    background-color: red;
+    font-family: 'Bebas Neue';
+    font-size: 20px;
     width: 270px;
     height: 30px;
     border-radius: 25px;
@@ -74,11 +75,10 @@ nav {
     margin-bottom: 40px;
     padding: 4px 9px;
     color: #1e1e1e;
-    font-family: Roboto;
 }
 
 #letras {
-    font-family: Roboto;
+    font-family: 'Bebas Neue';
     font-size: 26px;
     color: #111111;
     padding-top: 10px;
@@ -113,8 +113,9 @@ nav {
 }
 
 .text {
-    font-family: Roboto;
+    font-family: 'Bebas Neue';
     color: #111111;
+    font-size: 20px;
 }
 
 footer {
