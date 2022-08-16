@@ -19,6 +19,7 @@ namespace WebMVC.Controllers
                     ViewBag.cantVidas =  HomeController.nuevoJuego.log.juego.Vidas;
                     ViewBag.nombre = HomeController.nuevoJuego.log.juego.Nombre;
                     ViewBag.palabraIngresada = HomeController.nuevoJuego.log.juego.PalabraIngresada;
+                    ViewBag.palabra = HomeController.nuevoJuego.log.juego.Palabra;
                     return View();
 
                 default:

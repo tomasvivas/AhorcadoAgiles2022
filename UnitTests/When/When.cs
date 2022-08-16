@@ -18,7 +18,7 @@ namespace UnitTests.When
         }
 
         private IWebElement TextoIngresar => _webDriver.FindElement(By.Id("txtLetra"));
-        private IWebElement BtnEnviar => _webDriver.FindElement(By.Id("btnEnviar"));
+        private IWebElement BtnEnviar => _webDriver.FindElement(By.ClassName(".btnMain"));
 
         [When("Usuario ingresa una letra (.*)")]
         public void WhenUsuarioIngresaLetra(string letter)

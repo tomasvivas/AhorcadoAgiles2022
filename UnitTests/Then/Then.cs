@@ -45,12 +45,16 @@ namespace UnitTests.Then
         [Then("Usuario gana la partida")]
         public void ThenGanaPartida()
         {
-            //
+            var Ganar = _webDriver.FindElement(By.Id("gano"));
+            Ganar.ToString().Should().Contain("Felicidades");
+            Ganar.Should().Be("Visible");
         }
         [Then("Usuario pierde la partida")]
         public void ThenPierdePartida()
         {
-            //
+            var Perder = _webDriver.FindElement(By.Id("lost"));
+            Perder.ToString().Should().Contain("No has acertado");
+            Perder.Should().Be("Visible");
         }
 
     }
