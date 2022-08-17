@@ -24,32 +24,32 @@ namespace UnitTests.Then
         private IWebElement Incorrectas => _webDriver.FindElement(By.Id("letras"));
 
 
-        [Then("La letra se muestra en la palabra a adivinar")]
+        [Then(@"La letra se muestra en la palabra a adivinar")]
         public void ThenLetraSeMuestraEnPalabra(string letter)
         {
             Palabra.ToString().Should().Contain(letter);
         }
 
-        [Then("Se descuenta un punto de vida")]
+        [Then(@"Se descuenta un punto de vida")]
         public void ThenPierdeVida()
         {
             Vidas.ToString().Should().Contain("4/5");
         }
 
-        [Then("La letra se muestra en letras incorrectas")]
+        [Then(@"La letra se muestra en letras incorrectas")]
         public void ThenLetraSeMeMuestraEnIncorrectas(string letter)
         {
             Incorrectas.ToString().Should().Contain(letter);
         }
 
-        [Then("Usuario gana la partida")]
+        [Then(@"Usuario gana la partida")]
         public void ThenGanaPartida()
         {
             var Ganar = _webDriver.FindElement(By.Id("gano"));
             Ganar.ToString().Should().Contain("Felicidades");
             Ganar.Should().Be("Visible");
         }
-        [Then("Usuario pierde la partida")]
+        [Then(@"Usuario pierde la partida")]
         public void ThenPierdePartida()
         {
             var Perder = _webDriver.FindElement(By.Id("lost"));

@@ -22,7 +22,7 @@ namespace UnitTests.Given
         private IWebElement TextoIngresar => _webDriver.FindElement(By.Id("txtLetra"));
         private IWebElement BtnEnviar => _webDriver.FindElement(By.ClassName(".btnMain"));
 
-        [Given("Usuario ingresa un nombre")]
+        [Given(@"Usuario ingresa un nombre")]
         public void GivenUsuarioIngresaPalabra()
         {
             var driver = new OpenQA.Selenium.Chrome.ChromeDriver(@"C:\Users\Tomas\source\repos\AhorcadoAgiles2022\UnitTests\Drivers");

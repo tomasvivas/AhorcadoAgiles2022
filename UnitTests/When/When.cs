@@ -20,7 +20,7 @@ namespace UnitTests.When
         private IWebElement TextoIngresar => _webDriver.FindElement(By.Id("txtLetra"));
         private IWebElement BtnEnviar => _webDriver.FindElement(By.ClassName(".btnMain"));
 
-        [When("Usuario ingresa una letra (.*)")]
+        [When(@"Usuario ingresa una letra (.*)")]
         public void WhenUsuarioIngresaLetra(string letter)
         {
             TextoIngresar.Clear();
@@ -29,7 +29,7 @@ namespace UnitTests.When
 
         }
 
-        [When("Usuario ingresa todas las letras (.*)")]
+        [When(@"Usuario ingresa todas las letras (.*)")]
         public void WhenUsuarioIngresaLetras(Array letras)
         {
             TextoIngresar.Clear();
