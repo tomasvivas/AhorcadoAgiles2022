@@ -30,6 +30,8 @@ namespace UnitTests.Given
             TextoIngresar.Clear();
             TextoIngresar.SendKeys("Tomas");
             BtnEnviar.Click();
+            Main main = new Main();
+            main.Play("pato");
         }
     }
 }

@@ -11,8 +11,8 @@ Scenario: Usuario ingresa una letra correcta
 	Examples:
 	| Correcta |
 	| 'a'      |
-	| 'e'      |
-	| ' '      |
+	| 't'      |
+	| 'o'      |
 
 @UITests
 Scenario: Usuario ingresa una letra incorrecta
@@ -34,10 +34,10 @@ Scenario: Usuario gana el juego
 	Then Usuario gana la partida
 
 	Examples:
-	 | Correctas           |
-	 | ['p','a','t','o']   |
-	 | ['serpiente']       |
-	 | ['reactor nuclear'] |
+	 | Correctas         |
+	 | ['p','a','t','o'] |
+	 | ['pato']          |
+	 | ['t','a','o','p'  |
 
 @UITests
 Scenario: Usuario pierde el juego
@@ -47,6 +47,6 @@ Scenario: Usuario pierde el juego
 
 	Examples:
 	 | Incorrectas           |
-	 | ['e','i','s','o','r'] |
-	 | ['auto']              |
-	 | ['caliente']          |
+	 | ['e','i','s','m','r'] |
+	 | ['toro']              |
+	 | ['error']             |
