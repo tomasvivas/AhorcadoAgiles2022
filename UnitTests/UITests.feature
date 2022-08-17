@@ -37,7 +37,7 @@ Scenario: Usuario gana el juego
 	 | Correctas         |
 	 | ['p','a','t','o'] |
 	 | ['pato']          |
-	 | ['t','a','o','p'  |
+	 | ['t','a','o','p'] |
 
 @UITests
 Scenario: Usuario pierde el juego
