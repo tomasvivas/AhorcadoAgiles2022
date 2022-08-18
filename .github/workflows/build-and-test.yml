@@ -29,9 +29,6 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
   
-    - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v2.1.0
-  
     - name: Install dependencies
       run: dotnet restore
       
