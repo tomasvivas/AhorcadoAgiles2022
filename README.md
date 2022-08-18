@@ -5,5 +5,4 @@ Grupo: 01 Integrantes:
   -Garate, Agustin 
   -Vivas, Tomas
 
-
-https://www.youtube.com/watch?v=L6vquUQOXSo
+https://portal.azure.com/?quickstart=True#@tomiagus00gmail.onmicrosoft.com/resource/subscriptions/2882dfb0-0179-4190-9d2e-6f9f550239ad/resourcegroups/ahorcado-agiles_group/providers/Microsoft.Web/sites/ahorcado-agiles/appServices
