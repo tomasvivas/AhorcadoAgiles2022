@@ -26,7 +26,7 @@ namespace UnitTests.Given
         public void GivenUsuarioIngresaPalabra()
         {
             var driver = new OpenQA.Selenium.Chrome.ChromeDriver(@"C:\Users\Tomas\source\repos\AhorcadoAgiles2022\UnitTests\Drivers");
-            driver.Navigate().GoToUrl("");
+            driver.Navigate().GoToUrl("https://ahorcado-agiles.azurewebsites.net/");
             TextoIngresar.Clear();
             TextoIngresar.SendKeys("Tomas");
             BtnEnviar.Click();
