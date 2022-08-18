@@ -193,6 +193,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\juego\Perdio.cshtml" />
     <Content Include="Views\Shared\_LayoutPage.cshtml" />
+    <None Include="Properties\PublishProfiles\ahorcado-agiles - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
